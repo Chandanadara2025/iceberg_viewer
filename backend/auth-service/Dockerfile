@@ -2,11 +2,11 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /app
 
 # Ensure correct path for copying .csproj
-COPY ["./auth-service.csproj", "./"]
+COPY backend/auth-service/auth-service.csproj ./  
 RUN dotnet restore
 
 # Copy source files based on folder structure
-COPY . /app/
+COPY backend/auth-service /app/
 
 RUN dotnet publish -c Release -o /app/publish
 
