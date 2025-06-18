@@ -1,0 +1,8 @@
+{
+  "name": "angular-app",
+  "version": "1.0.0",
+  "dependencies": {
+    "ng-zorro-antd": "^13.0.0",
+    "rxjs": "^7.4.0"
+  }
+}
