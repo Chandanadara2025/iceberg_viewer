@@ -6,7 +6,8 @@ COPY ["./auth-service.csproj", "./"]
 RUN dotnet restore
 
 # Copy source files based on folder structure
-COPY . .
+COPY . /app/
+
 RUN dotnet publish -c Release -o /app/publish
 
 # Stage 2: Create runtime image
