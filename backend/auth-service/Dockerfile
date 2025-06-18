@@ -2,7 +2,7 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /app
 
 # Ensure correct path for copying .csproj
-COPY ["backend/auth-service/auth-service.csproj", "./"]
+COPY ["./auth-service.csproj", "./"]
 RUN dotnet restore
 
 # Copy source files based on folder structure
