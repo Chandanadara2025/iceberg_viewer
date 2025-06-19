@@ -1,7 +1,12 @@
+using auth_service.Services;
+
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddScoped<IAuthService, AuthService>(); // Ensure this exists
+
+builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddControllers();
+
 var app = builder.Build();
+
 app.UseAuthorization();
 app.MapControllers();
 app.Run();
