@@ -2,11 +2,11 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /app
 
-# Copy only the .csproj file to leverage layer caching
+# Copy and restore the project
 COPY auth-service.csproj ./
 RUN dotnet restore
 
-# Copy rest of the source code
+# Copy all other source files
 COPY . ./
 RUN dotnet publish -c Release -o /app/publish
 
