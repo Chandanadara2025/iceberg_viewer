@@ -15,8 +15,8 @@ jobs:
 
       - name: Build Docker images
         run: |
-          docker build -t caresoftchandana/caresoft/auth-service backend/auth-service
-          docker build -t caresoftchandana/caresoft/user-service backend/user-service
+          docker build -t caresoftchandana/caresoft/auth-service -f backend/auth-service/Dockerfile backend/auth-service
+          docker build -t caresoftchandana/caresoft/user-service -f backend/user-service/Dockerfile backend/user-service
 
       - name: Push to Docker Hub
         run: |
